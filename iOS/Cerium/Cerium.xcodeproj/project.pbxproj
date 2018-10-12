@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42626FD521704C8D00B07366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42626FD421704C8D00B07366 /* AppDelegate.swift */; };
+		42626FD721704C8D00B07366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42626FD621704C8D00B07366 /* ViewController.swift */; };
+		42626FDA21704C8D00B07366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42626FD821704C8D00B07366 /* Main.storyboard */; };
+		42626FDD21704C8D00B07366 /* Cerium.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42626FDB21704C8D00B07366 /* Cerium.xcdatamodeld */; };
+		42626FDF21704C8E00B07366 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42626FDE21704C8E00B07366 /* Assets.xcassets */; };
+		42626FE221704C8E00B07366 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42626FE021704C8E00B07366 /* LaunchScreen.storyboard */; };
+		42626FED21704C8E00B07366 /* CeriumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42626FEC21704C8E00B07366 /* CeriumTests.swift */; };
+		42626FF821704C8E00B07366 /* CeriumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42626FF721704C8E00B07366 /* CeriumUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42626FE921704C8E00B07366 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42626FC921704C8D00B07366 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42626FD021704C8D00B07366;
+			remoteInfo = Cerium;
+		};
+		42626FF421704C8E00B07366 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42626FC921704C8D00B07366 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42626FD021704C8D00B07366;
+			remoteInfo = Cerium;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42626FD121704C8D00B07366 /* Cerium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cerium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42626FD421704C8D00B07366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42626FD621704C8D00B07366 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		42626FD921704C8D00B07366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42626FDC21704C8D00B07366 /* Cerium.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cerium.xcdatamodel; sourceTree = "<group>"; };
+		42626FDE21704C8E00B07366 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42626FE121704C8E00B07366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42626FE321704C8E00B07366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42626FE821704C8E00B07366 /* CeriumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CeriumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42626FEC21704C8E00B07366 /* CeriumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeriumTests.swift; sourceTree = "<group>"; };
+		42626FEE21704C8E00B07366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42626FF321704C8E00B07366 /* CeriumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CeriumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42626FF721704C8E00B07366 /* CeriumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeriumUITests.swift; sourceTree = "<group>"; };
+		42626FF921704C8E00B07366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42626FCE21704C8D00B07366 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42626FE521704C8E00B07366 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42626FF021704C8E00B07366 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42626FC821704C8D00B07366 = {
+			isa = PBXGroup;
+			children = (
+				42626FD321704C8D00B07366 /* Cerium */,
+				42626FEB21704C8E00B07366 /* CeriumTests */,
+				42626FF621704C8E00B07366 /* CeriumUITests */,
+				42626FD221704C8D00B07366 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42626FD221704C8D00B07366 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42626FD121704C8D00B07366 /* Cerium.app */,
+				42626FE821704C8E00B07366 /* CeriumTests.xctest */,
+				42626FF321704C8E00B07366 /* CeriumUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42626FD321704C8D00B07366 /* Cerium */ = {
+			isa = PBXGroup;
+			children = (
+				42626FD421704C8D00B07366 /* AppDelegate.swift */,
+				42626FD621704C8D00B07366 /* ViewController.swift */,
+				42626FD821704C8D00B07366 /* Main.storyboard */,
+				42626FDE21704C8E00B07366 /* Assets.xcassets */,
+				42626FE021704C8E00B07366 /* LaunchScreen.storyboard */,
+				42626FE321704C8E00B07366 /* Info.plist */,
+				42626FDB21704C8D00B07366 /* Cerium.xcdatamodeld */,
+			);
+			path = Cerium;
+			sourceTree = "<group>";
+		};
+		42626FEB21704C8E00B07366 /* CeriumTests */ = {
+			isa = PBXGroup;
+			children = (
+				42626FEC21704C8E00B07366 /* CeriumTests.swift */,
+				42626FEE21704C8E00B07366 /* Info.plist */,
+			);
+			path = CeriumTests;
+			sourceTree = "<group>";
+		};
+		42626FF621704C8E00B07366 /* CeriumUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42626FF721704C8E00B07366 /* CeriumUITests.swift */,
+				42626FF921704C8E00B07366 /* Info.plist */,
+			);
+			path = CeriumUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42626FD021704C8D00B07366 /* Cerium */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42626FFC21704C8E00B07366 /* Build configuration list for PBXNativeTarget "Cerium" */;
+			buildPhases = (
+				42626FCD21704C8D00B07366 /* Sources */,
+				42626FCE21704C8D00B07366 /* Frameworks */,
+				42626FCF21704C8D00B07366 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cerium;
+			productName = Cerium;
+			productReference = 42626FD121704C8D00B07366 /* Cerium.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42626FE721704C8E00B07366 /* CeriumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42626FFF21704C8E00B07366 /* Build configuration list for PBXNativeTarget "CeriumTests" */;
+			buildPhases = (
+				42626FE421704C8E00B07366 /* Sources */,
+				42626FE521704C8E00B07366 /* Frameworks */,
+				42626FE621704C8E00B07366 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42626FEA21704C8E00B07366 /* PBXTargetDependency */,
+			);
+			name = CeriumTests;
+			productName = CeriumTests;
+			productReference = 42626FE821704C8E00B07366 /* CeriumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42626FF221704C8E00B07366 /* CeriumUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4262700221704C8E00B07366 /* Build configuration list for PBXNativeTarget "CeriumUITests" */;
+			buildPhases = (
+				42626FEF21704C8E00B07366 /* Sources */,
+				42626FF021704C8E00B07366 /* Frameworks */,
+				42626FF121704C8E00B07366 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42626FF521704C8E00B07366 /* PBXTargetDependency */,
+			);
+			name = CeriumUITests;
+			productName = CeriumUITests;
+			productReference = 42626FF321704C8E00B07366 /* CeriumUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42626FC921704C8D00B07366 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Fein;
+				TargetAttributes = {
+					42626FD021704C8D00B07366 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					42626FE721704C8E00B07366 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 42626FD021704C8D00B07366;
+					};
+					42626FF221704C8E00B07366 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 42626FD021704C8D00B07366;
+					};
+				};
+			};
+			buildConfigurationList = 42626FCC21704C8D00B07366 /* Build configuration list for PBXProject "Cerium" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42626FC821704C8D00B07366;
+			productRefGroup = 42626FD221704C8D00B07366 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42626FD021704C8D00B07366 /* Cerium */,
+				42626FE721704C8E00B07366 /* CeriumTests */,
+				42626FF221704C8E00B07366 /* CeriumUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42626FCF21704C8D00B07366 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42626FE221704C8E00B07366 /* LaunchScreen.storyboard in Resources */,
+				42626FDF21704C8E00B07366 /* Assets.xcassets in Resources */,
+				42626FDA21704C8D00B07366 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42626FE621704C8E00B07366 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42626FF121704C8E00B07366 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42626FCD21704C8D00B07366 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42626FD721704C8D00B07366 /* ViewController.swift in Sources */,
+				42626FDD21704C8D00B07366 /* Cerium.xcdatamodeld in Sources */,
+				42626FD521704C8D00B07366 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42626FE421704C8E00B07366 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42626FED21704C8E00B07366 /* CeriumTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42626FEF21704C8E00B07366 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42626FF821704C8E00B07366 /* CeriumUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42626FEA21704C8E00B07366 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42626FD021704C8D00B07366 /* Cerium */;
+			targetProxy = 42626FE921704C8E00B07366 /* PBXContainerItemProxy */;
+		};
+		42626FF521704C8E00B07366 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42626FD021704C8D00B07366 /* Cerium */;
+			targetProxy = 42626FF421704C8E00B07366 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42626FD821704C8D00B07366 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42626FD921704C8D00B07366 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42626FE021704C8E00B07366 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42626FE121704C8E00B07366 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42626FFA21704C8E00B07366 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42626FFB21704C8E00B07366 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42626FFD21704C8E00B07366 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T358L9CKU3;
+				INFOPLIST_FILE = Cerium/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Fein.Cerium;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42626FFE21704C8E00B07366 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T358L9CKU3;
+				INFOPLIST_FILE = Cerium/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Fein.Cerium;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4262700021704C8E00B07366 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T358L9CKU3;
+				INFOPLIST_FILE = CeriumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Fein.CeriumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cerium.app/Cerium";
+			};
+			name = Debug;
+		};
+		4262700121704C8E00B07366 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T358L9CKU3;
+				INFOPLIST_FILE = CeriumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Fein.CeriumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cerium.app/Cerium";
+			};
+			name = Release;
+		};
+		4262700321704C8E00B07366 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T358L9CKU3;
+				INFOPLIST_FILE = CeriumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Fein.CeriumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cerium;
+			};
+			name = Debug;
+		};
+		4262700421704C8E00B07366 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T358L9CKU3;
+				INFOPLIST_FILE = CeriumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Fein.CeriumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cerium;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42626FCC21704C8D00B07366 /* Build configuration list for PBXProject "Cerium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42626FFA21704C8E00B07366 /* Debug */,
+				42626FFB21704C8E00B07366 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42626FFC21704C8E00B07366 /* Build configuration list for PBXNativeTarget "Cerium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42626FFD21704C8E00B07366 /* Debug */,
+				42626FFE21704C8E00B07366 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42626FFF21704C8E00B07366 /* Build configuration list for PBXNativeTarget "CeriumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4262700021704C8E00B07366 /* Debug */,
+				4262700121704C8E00B07366 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4262700221704C8E00B07366 /* Build configuration list for PBXNativeTarget "CeriumUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4262700321704C8E00B07366 /* Debug */,
+				4262700421704C8E00B07366 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		42626FDB21704C8D00B07366 /* Cerium.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				42626FDC21704C8D00B07366 /* Cerium.xcdatamodel */,
+			);
+			currentVersion = 42626FDC21704C8D00B07366 /* Cerium.xcdatamodel */;
+			path = Cerium.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 42626FC921704C8D00B07366 /* Project object */;
+}
