@@ -3,21 +3,19 @@ import WebKit
 
 class ViewController: UIViewController, WKUIDelegate {
     
-    @IBOutlet var RoverCam1: WKWebView!
+    @IBOutlet var RoverCam2: WKWebView!
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
-        RoverCam1 = WKWebView(frame: .zero, configuration: webConfiguration)
-        RoverCam1.uiDelegate = self
-        view = RoverCam1
+        RoverCam2 = WKWebView(frame: .zero, configuration: webConfiguration)
+        RoverCam2.uiDelegate = self
+        view = RoverCam2
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let myURL = URL(string:"http://apple.com/")
-        let myRequest = URLRequest(url: myURL!)
-        RoverCam1.load(myRequest)
+        let motion_url = URL(string:"http://10.0.1.140:8081/")
+        let myRequest = URLRequest(url: motion_url!)
+        RoverCam2.load(myRequest)
     }
-
 }
