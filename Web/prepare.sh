@@ -6,6 +6,8 @@ echo "rostopic pub /listener std_msgs/String "Hello, World""
 echo "rostopic echo /cmd_vel"
 echo "rosrun rospy_tutorials add_two_ints_server"
 echo "roslaunch rosbridge_server rosbridge_websocket.launch"
+echo "Update ros host value: ~ line 45"
+echo "Update video host value: ~ line 184"
 echo "python -m SimpleHTTPServer"
 
 #gnome-terminal --tab
