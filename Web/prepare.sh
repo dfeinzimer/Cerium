@@ -2,7 +2,7 @@
 
 echo "Preparing Titan Rover Cerium"
 echo "roscore"
-echo "rostopic pub /listener std_msgs/String "Hello, World""
+echo "rostopic pub /listener std_msgs/String \"Hello, World\""
 echo "rostopic echo /cmd_vel"
 echo "rosrun rospy_tutorials add_two_ints_server"
 echo "roslaunch rosbridge_server rosbridge_websocket.launch"
