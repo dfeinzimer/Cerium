@@ -12,6 +12,7 @@ echo "python -m SimpleHTTPServer"
 
 # Find old server process id with lsof -i :8000
 # Kill with sudo kill -9 PID
+# If motion presents grey sceen add modprobe bcm2835-v4l2 to /etc/rc.local or simply run sudo modprobe bcm2835-v4l2 
 
 #gnome-terminal --tab
 #roscore
