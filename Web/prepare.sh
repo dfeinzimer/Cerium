@@ -10,6 +10,9 @@ echo "Update ros host value: ~ line 45"
 echo "Update video host value: ~ line 184"
 echo "python -m SimpleHTTPServer"
 
+# Find old server process id with lsof -i :8000
+# Kill with sudo kill -9 PID
+
 #gnome-terminal --tab
 #roscore
 

@@ -5,6 +5,8 @@
 <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
 <!-- <script src="../build/roslib.js"></script> -->
 <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <script>
   // Connecting to ROS
@@ -159,6 +161,12 @@
   favoriteColor.get(function(value) {
     console.log('My robot\'s favorite color is ' + value);
   });
+
+</script>
+<script>
+  $(document).ready(function(){
+    $('iframe#roverview1').attr('src', 'http://10.0.1.140:8081/');
+  });
 </script>
 <title>Titan Rover Cerium</title>
 </head>
@@ -179,6 +187,6 @@
       Rover has closed the connection.
     </p>
   </div>
-  <iframe src="http://10.0.1.140:8081/"></iframe>
+  <iframe id="roverview1" src=""></iframe>
 </body>
 </html>
