@@ -9,6 +9,16 @@
 <!--- Requires http://wiki.ros.org/rosbridge_server --->
 <!-- python -m SimpleHTTPServer -->
 <!-- Update host in line 45 -->
+<!--
+  <p>Run the following commands in the terminal then refresh this page. Monitor web console output.</p>
+  <ol>
+    <li><tt>roscore</tt></li>
+    <li><tt>rostopic pub /listener std_msgs/String "Hello, World"</tt></li>
+    <li><tt>rostopic echo /cmd_vel</tt></li>
+    <li><tt>rosrun rospy_tutorials add_two_ints_server</tt></li>
+    <li><tt>roslaunch rosbridge_server rosbridge_websocket.launch</tt></li>
+  </ol>
+-->
 
 <script>
   // Connecting to ROS
@@ -169,28 +179,20 @@
 
 <body>
   <h1>Titan Rover Cerium</h1>
-  <p>Run the following commands in the terminal then refresh this page. Monitor web console output.</p>
-  <ol>
-    <li><tt>roscore</tt></li>
-    <li><tt>rostopic pub /listener std_msgs/String "Hello, World"</tt></li>
-    <li><tt>rostopic echo /cmd_vel</tt></li>
-    <li><tt>rosrun rospy_tutorials add_two_ints_server</tt></li>
-    <li><tt>roslaunch rosbridge_server rosbridge_websocket.launch</tt></li>
-  </ol>
   <div id="statusIndicator">
-    <p id="connecting">
-      Connecting to rosbridge...
+    <p id="connecting" style="color:ORANGE">
+      Connecting to rosbridge on Rover...
     </p>
-    <p id="connected" style="color:#00D600; display:none">
-      Connected
+    <p id="connected" style="color:GREEN; display:none">
+      Connected to Rover
     </p>
-    <p id="error" style="color:#FF0000; display:none">
-      Error in the backend!
+    <p id="error" style="color:RED; display:none">
+      Error connecting to Rover!
     </p>
-    <p id="closed" style="display:none">
-      Connection closed.
+    <p id="closed" style="color:RED; display:none">
+      Rover has closed the connection.
     </p>
   </div>
-  <iframe src="https://www.erachart.com"></iframe>
+  <iframe src=""></iframe>
 </body>
 </html>
