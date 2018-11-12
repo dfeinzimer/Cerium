@@ -12,7 +12,8 @@ python -m SimpleHTTPServer
 
 Troubleshooting
 	Motion grey sceen
-		Add modprobe bcm2835-v4l2 to /etc/rc.local or 				simply run sudo modprobe bcm2835-v4l2 
+		1) Add modprobe bcm2835-v4l2 to /etc/rc.local 
+		2) Or simply run sudo modprobe bcm2835-v4l2 
 	Server already running
 		Find old server process id with lsof -i :8000
 		Kill with sudo kill -9 PID
