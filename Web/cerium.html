@@ -63,13 +63,15 @@
         }
       });
       var set = new ROSLIB.Message({
+        // forwarx
+        // turny
         arm : {
           j1 : 0,
           j2 : 0,
           j3 : 0,
           j4 : 0,
-          j5_1 : 0,
-          j5_2 : 0,
+          j5_1 : 0, // -1, 0, 1
+          j5_2 : 0, // -1, 0, 1
         },
         motors : {
           x : 0,
@@ -79,7 +81,7 @@
       });
       // And finally, publish.
       cmdVel.publish(twist);
-      //cmdVel.publish(set);
+      cmdVel.publish(set);
       //Subscribing to a Topic
       //----------------------
       // Like when publishing a topic, we first create a Topic object with details of the topic's name
