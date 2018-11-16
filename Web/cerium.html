@@ -16,7 +16,8 @@
       var throttle_max = 10;
       var throttle_min = -10;
       ros.connect(roshost); // Connect the ros object to roshost
-      // Publishing to a topic
+
+      // Publishing
       var cmdVel = new ROSLIB.Topic({ // Create a topic object
         ros : ros,
         name : '/cmd_vel',
@@ -38,7 +39,7 @@
       });
       cmdVel.publish(twist); // Publish the message
       // Create the message payload to be published
-      // Object matches fields defined in .msg definition
+      // Object matches fields defined in .msg
       var rover_message = new ROSLIB.Message({
         arm : {
           j1 : 0,
@@ -55,58 +56,54 @@
         mode : 0
       });
       cmdVel.publish(rover_message); // Publish the message
-      //Subscribing to a topic
-      // Like when publishing a topic, we first create a Topic object with details of the topic's name
-      // and message type. Note that we can call publish or subscribe on the same topic object.
-      var listener = new ROSLIB.Topic({
+
+      //Subscribing
+      var listener = new ROSLIB.Topic({ // Create a topic object
         ros : ros,
         name : '/listener',
         messageType : 'std_msgs/String'
       });
-      // Then we add a callback to be called every time a message is published on this topic.
+      // Callback for messages published on the topic
       listener.subscribe(function(message) {
         console.log('Received message on ' + listener.name + ': ' + message.data);
-        // If desired, we can unsubscribe from the topic as well.
-        listener.unsubscribe();
       });
+      // Unsubscribe from the topic
+      //listener.unsubscribe();
+
       // Calling a service
-      // -----------------
-      // First, we create a Service client with details of the service's name and service type.
-      var addTwoIntsClient = new ROSLIB.Service({
+      var addTwoIntsClient = new ROSLIB.Service({ // Create a service cleint
         ros : ros,
         name : '/add_two_ints',
         serviceType : 'rospy_tutorials/AddTwoInts'
       });
-      // Then we create a Service Request. The object we pass in to ROSLIB.ServiceRequest matches the
-      // fields defined in the rospy_tutorials AddTwoInts.srv file.
+      // Create a service request
+      // Object matches fields defined in .srv
       var request = new ROSLIB.ServiceRequest({
         a : 5,
         b : 2
       });
-      // Finally, we call the /add_two_ints service and get back the results in the callback. The result
-      // is a ROSLIB.ServiceResponse object.
+      // Call service /add_two_ints and get back the results in callback
+      // Produces a ROSLIB.ServiceResponse object
       addTwoIntsClient.callService(request, function(result) {
         console.log('Result for service call on ' + addTwoIntsClient.name + ': ' + result.sum);
       });
-      // Advertising a Service
-      // ---------------------
-      // The Service object does double duty for both calling and advertising services
-      var setBoolServer = new ROSLIB.Service({
+
+      // Advertising a service
+      var setBoolServer = new ROSLIB.Service({ // Create a service cleint
         ros : ros,
         name : '/set_bool',
         serviceType : 'std_srvs/SetBool'
       });
-      // Use the advertise() method to indicate that we want to provide this service
-      setBoolServer.advertise(function(request, response) {
+      setBoolServer.advertise(function(request, response) { // Advertise the service
         console.log('Received service request on ' + setBoolServer.name + ': ' + request.data);
         response['success'] = true;
         response['message'] = 'Set successfully';
         return true;
       });
+
       // Setting a param value
-      // ---------------------
       ros.getParams(function(params) {
-        //console.log(params);
+        console.log(params);
       });
       // First, we create a Param object with the name of the param.
       var maxVelX = new ROSLIB.Param({
