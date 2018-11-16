@@ -101,40 +101,35 @@
         return true;
       });
 
-      // Setting a param value
-      ros.getParams(function(params) {
+      // Setting/getting a param value
+      ros.getParams(function(params) {  // Get available params
         console.log(params);
       });
       // First, we create a Param object with the name of the param.
-      var maxVelX = new ROSLIB.Param({
+      var test_param = new ROSLIB.Param({
         ros : ros,
         name : 'max_vel_y'
       });
-      //Then we set the value of the param, which is sent to the ROS Parameter Server.
-      maxVelX.set(0.8);
-      maxVelX.get(function(value) {
-        console.log('MAX VAL: ' + value);
+      // Set the value to be sent to the ROS Parameter Server
+      test_param.set(0.8);
+      test_param.get(function(value) {
+        console.log('test_param: ' + value);
       });
-      // Getting a param value
-      // ---------------------
-      var favoriteColor = new ROSLIB.Param({
-        ros : ros,
-        name : 'favorite_color'
-      });
-      favoriteColor.set('red');
-      favoriteColor.get(function(value) {
-        console.log('My robot\'s favorite color is ' + value);
-      });
+
+      // Report current values
       function reporter() {
           console.log(document.getElementById("throttle").value);
       }
-      $(document).ready(function(){ // After the file has loaded
+
+      // After the file has loaded
+      $(document).ready(function(){ // Do the following
         $('iframe#roverview1').attr('src', camera); // Load the camera stream
         setInterval(reporter, 100); // Call reporter every 100ms
         document.getElementById("throttle").min = throttle_min;
         document.getElementById("throttle").max = throttle_max;
         document.getElementById("throttle").value = throttle_default;
       });
+
       ros.on('error', function(error) { // Emit an 'error' if there is an error on the backend
         console.log(error);
         document.getElementById("status_roshost").innerHTML = "Cannot connect: " + error;
@@ -150,6 +145,7 @@
         document.getElementById("status_roshost").innerHTML = "Rover has closed the connection";
         document.getElementById("status_roshost").style = "color:ORANGE";
       });
+
     </script>
   </head>
   <body>
