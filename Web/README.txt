@@ -1,5 +1,5 @@
-Authors: 	David Feinzimer, dfeinzimer@csu.fullerton.edu
-Version:	11.16.18.02
+Authors: 	David Feinzimer <dfeinzimer@csu.fullerton.edu>
+Version:	11.16.18.03
 
 
 Setup:
@@ -13,6 +13,7 @@ Setup:
 	2) Update 'roshost' value
 	3) Update 'camera' value
 
+
 Troubleshooting:
 	Motion displaying gray screen with error message:
 		1) Add modprobe bcm2835-v4l2 to /etc/rc.local
@@ -20,6 +21,7 @@ Troubleshooting:
 	Server already running error:
 		Find old server process id with lsof -i :8000
 		Kill with sudo kill -9 PID
+
 
 Dependencies:
 	Requires http://wiki.ros.org/rosbridge_server
