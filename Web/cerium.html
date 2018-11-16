@@ -9,21 +9,21 @@
     <link rel="stylesheet" href="/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script>
-      var roshost = 'ws://192.168.1.203:9090'
       var camera = 'http://192.168.1.176:8081'
       var ros = new ROSLIB.Ros(); // Make a new ros object
+      var roshost = 'ws://192.168.1.203:9090'
+      var throttle_default = 0;
+      var throttle_max = 10;
+      var throttle_min = -10;
       ros.connect(roshost); // Connect the ros object to roshost
-
-      // Publishing a Topic
-      // ------------------
-      // First, we create a Topic object with details of the topic's name and message type.
-      var cmdVel = new ROSLIB.Topic({
+      // Publishing to a topic
+      var cmdVel = new ROSLIB.Topic({ // Create a topic object
         ros : ros,
         name : '/cmd_vel',
         messageType : 'geometry_msgs/Twist'
       });
-      // Then we create the payload to be published. The object we pass in to ros.Message matches the
-      // fields defined in the geometry_msgs/Twist.msg definition.
+      // Create the message payload to be published
+      // Object matches fields defined in geometry_msgs/Twist.msg definition
       var twist = new ROSLIB.Message({
         linear : {
           x : 0.1,
@@ -36,9 +36,10 @@
           z : -0.3
         }
       });
-      var set = new ROSLIB.Message({
-        // forwarx
-        // turny
+      cmdVel.publish(twist); // Publish the message
+      // Create the message payload to be published
+      // Object matches fields defined in .msg definition
+      var rover_message = new ROSLIB.Message({
         arm : {
           j1 : 0,
           j2 : 0,
@@ -53,11 +54,8 @@
         },
         mode : 0
       });
-      // And finally, publish.
-      cmdVel.publish(twist);
-      cmdVel.publish(set);
-      //Subscribing to a Topic
-      //----------------------
+      cmdVel.publish(rover_message); // Publish the message
+      //Subscribing to a topic
       // Like when publishing a topic, we first create a Topic object with details of the topic's name
       // and message type. Note that we can call publish or subscribe on the same topic object.
       var listener = new ROSLIB.Topic({
@@ -131,56 +129,37 @@
         console.log('My robot\'s favorite color is ' + value);
       });
       function reporter() {
-          console.log(document.getElementById("range_throttle").value);
+          console.log(document.getElementById("throttle").value);
       }
       $(document).ready(function(){ // After the file has loaded
         $('iframe#roverview1').attr('src', camera); // Load the camera stream
         setInterval(reporter, 100); // Call reporter every 100ms
+        document.getElementById("throttle").min = throttle_min;
+        document.getElementById("throttle").max = throttle_max;
+        document.getElementById("throttle").value = throttle_default;
       });
       ros.on('error', function(error) { // Emit an 'error' if there is an error on the backend
-        document.getElementById('connecting').style.display = 'none';
-        document.getElementById('connected').style.display = 'none';
-        document.getElementById('closed').style.display = 'none';
-        document.getElementById('error').style.display = 'inline';
         console.log(error);
+        document.getElementById("status_roshost").innerHTML = "Cannot connect: " + error;
+        document.getElementById("status_roshost").style = "color:RED";
       });
       ros.on('connection', function() { // Report a successful connection attempt
-        console.log('Connection made!');
-        document.getElementById('connecting').style.display = 'none';
-        document.getElementById('error').style.display = 'none';
-        document.getElementById('closed').style.display = 'none';
-        document.getElementById('connected').style.display = 'inline';
+        console.log("Connected to Rover");
+        document.getElementById("status_roshost").innerHTML = "Connected to Rover";
+        document.getElementById("status_roshost").style = "color:GREEN";
       });
       ros.on('close', function() { // Report a connection closed
-        console.log('Connection closed.');
-        document.getElementById('connecting').style.display = 'none';
-        document.getElementById('connected').style.display = 'none';
-        document.getElementById('closed').style.display = 'inline';
+        console.log("Rover has closed the connection");
+        document.getElementById("status_roshost").innerHTML = "Rover has closed the connection";
+        document.getElementById("status_roshost").style = "color:ORANGE";
       });
     </script>
   </head>
   <body>
-    <h1>Titan Rover Cerium</h1>
-    <div id="statusIndicator">
-      <p id="connecting" style="color:ORANGE">
-        Connecting to rosbridge on Rover
-      </p>
-      <p id="connected" style="color:GREEN; display:none">
-        Connected to Rover
-      </p>
-      <p id="error" style="color:RED; display:none">
-        Error connecting to Rover
-      </p>
-      <p id="closed" style="color:RED; display:none">
-        Rover has closed the connection
-      </p>
-    </div>
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe id="roverview1" class="embed-responsive-item" src=""></iframe>
-    </div>
-    <div class="embed-responsive">
-      <input type="range" class="custom-range" id="range_throttle" min="-10" max="10">
-      <div><label>Throttle</label></div>
-    </div>
+    <div><h1>Titan Rover Cerium</h1></div>
+    <div><p id="status_roshost">Status Unavailable</p></div>
+    <div><iframe id="roverview1" src=""></iframe></div>
+    <div><input type="range" id="throttle"></div>
+    <div><label>Throttle</label></div>
   </body>
 </html>
