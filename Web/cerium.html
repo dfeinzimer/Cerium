@@ -113,6 +113,7 @@
       function reporter() {
           console.log(document.getElementById("throttle").value);
           console.log(rover_message);
+          cmdVel.publish(rover_message); // Publish the message
       }
 
       // After the file has loaded
