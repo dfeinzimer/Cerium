@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script>
-      var camera = 'http://192.168.1.176:8081'
+      var camera = 'http://192.168.1.242:8081'
       var ros = new ROSLIB.Ros(); // Make a new ros object
-      var roshost = 'ws://192.168.1.203:9090'
+      var roshost = 'ws://192.168.1.242:11311'
       var throttle_default = 0;
       var throttle_max = 10;
       var throttle_min = -10;
@@ -20,24 +20,9 @@
       // Publishing
       var cmdVel = new ROSLIB.Topic({ // Create a topic object
         ros : ros,
-        name : '/cmd_vel',
-        messageType : 'geometry_msgs/Twist'
+        name : '/joystick',
+        messageType : 'std_msgs/joystick'
       });
-      // Create the message payload to be published
-      // Object matches fields defined in geometry_msgs/Twist.msg definition
-      var twist = new ROSLIB.Message({
-        linear : {
-          x : 0.1,
-          y : 0.2,
-          z : 0.3
-        },
-        angular : {
-          x : -0.1,
-          y : -0.2,
-          z : -0.3
-        }
-      });
-      cmdVel.publish(twist); // Publish the message
       // Create the message payload to be published
       // Object matches fields defined in .msg
       var rover_message = new ROSLIB.Message({
@@ -56,6 +41,10 @@
         mode : 0
       });
       cmdVel.publish(rover_message); // Publish the message
+
+
+
+      /* BEGIN REMOVAL
 
       //Subscribing
       var listener = new ROSLIB.Topic({ // Create a topic object
@@ -116,9 +105,14 @@
         console.log('test_param: ' + value);
       });
 
+      END REMOVAL  */
+
+
+
       // Report current values
       function reporter() {
           console.log(document.getElementById("throttle").value);
+          console.log(rover_message);
       }
 
       // After the file has loaded
