@@ -5,8 +5,8 @@
     <meta charset="utf-8"/>
     <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
     <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
-    <script src="/jquery-3.3.1.min.js"</script>
-    <link rel="stylesheet" href="/style.css">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script>
       var camera = 'http://192.168.1.242:8081'
@@ -22,7 +22,6 @@
         ros : ros,
         name : '/joystick',
         messageType : 'std_msgs/joystick'
-        console.log("cmd",cmdVel);
       });
       // Create the message payload to be published
       // Object matches fields defined in .msg
