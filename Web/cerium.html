@@ -40,12 +40,12 @@
         },
         mode : {
           mode : 0,
-        }
+        },
       });
       function reporter() { // Console log and publish current values
           console.log(document.getElementById("throttle").value);
           console.log(message_obj);
-          rosbridge_obj.publish(message_obj); // Publish the message
+          //rosbridge_obj.publish(message_obj); // Publish the message
       }
       $(document).ready(function(){ // After app has loaded
         $('iframe#roverview1').attr('src', camera); // Load the camera stream
