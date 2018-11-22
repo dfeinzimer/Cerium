@@ -25,7 +25,7 @@
       });
       // Create the message payload to be published
       // Object matches fields defined in .msg
-      var rover_message = new ROSLIB.Message({
+      /*var rover_message = new ROSLIB.Message({
         arm : {
           j1 : 0,
           j2 : 0,
@@ -41,7 +41,7 @@
         mode : 0
       });
       cmdVel.publish(rover_message); // Publish the message
-
+*/
 
 
 
@@ -112,8 +112,7 @@
       // Report current values
       function reporter() {
           console.log(document.getElementById("throttle").value);
-          console.log(rover_message);
-          cmdVel.publish(rover_message); // Publish the message
+          //console.log(rover_message);
       }
 
       // After the file has loaded

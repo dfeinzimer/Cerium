@@ -3,7 +3,7 @@ Version:	11.16.18.07
 
 
 Setup:
-	1) In terminal tabs:
+	1) Run:
 			roscore
 			rostopic pub /listener std_msgs/String "Hello, World"
 			rostopic echo /cmd_vel
@@ -21,14 +21,15 @@ Troubleshooting:
 	Server already running error:
 		Find old server process id with lsof -i :8000
 		Kill with sudo kill -9 PID
-	rosbridge is not installed:
+	Rosbridge not installed:
 		1) Clone into catkin_ws
 			cd ~/catkin_ws/src
 			git clone https://github.com/RobotWebTools/rosbridge_suite.git
 		2) Build
 			cd ~/catkin_ws
 			catkin_make
-		3) source ~/ros_catkin_ws/devel/setup.bash
+		3) Source 
+			source ~/ros_catkin_ws/devel/setup.bash
 
 
 Dependencies:
