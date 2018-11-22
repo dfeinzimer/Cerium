@@ -21,7 +21,7 @@
       var cmdVel = new ROSLIB.Topic({ // Create a topic object
         ros : ros,
         name : '/joystick',
-        messageType : 'std_msgs/joystick'
+        messageType : 'mobility_topic.joystick'
       });
       // Create the message payload to be published
       // Object matches fields defined in .msg
@@ -105,7 +105,7 @@
         console.log('test_param: ' + value);
       });
 
-      
+
 
 
 
