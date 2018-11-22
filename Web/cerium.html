@@ -23,24 +23,29 @@
         messageType : 'mobility_topic.joystick'
       });
       var message_obj = new ROSLIB.Message({ // Create the message payload to be published
+        header : {
+          gfg
+        },
+        mobility : {
+          ForwardY : 0,
+          TurningX : 0,
+        },
         arm : {
-          j1 : 0,
-          j2 : 0,
-          j3 : 0,
-          j4 : 0,
-          j5_1 : 0, // -1, 0, 1
-          j5_2 : 0, // -1, 0, 1
+          J1 : 0,
+          J2 : 0,
+          J3 : 0,
+          J4 : 0,
+          J51 : 0,
+          J52 : 0,
         },
-        motors : {
-          x : 0,
-          y : 0
+        mode : {
+          mode : 0,
         },
-        mode : 0
       });
       function reporter() { // Console log and publish current values
           console.log(document.getElementById("throttle").value);
           console.log(message_obj);
-          //rosbridge_obj.publish(message_obj); // Publish the message
+          rosbridge_obj.publish(message_obj); // Publish the message
       }
       $(document).ready(function(){ // After app has loaded
         $('iframe#roverview1').attr('src', camera); // Load the camera stream
