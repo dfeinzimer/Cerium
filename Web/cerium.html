@@ -5,13 +5,13 @@
     <meta charset="utf-8"/>
     <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
     <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="/jquery-3.3.1.min.js"</script>
     <link rel="stylesheet" href="/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script>
       var camera = 'http://192.168.1.242:8081'
       var ros = new ROSLIB.Ros(); // Make a new ros object
-      var roshost = 'ws://192.168.1.242:11311'
+      var roshost = 'ws://192.168.1.242:9090'
       var throttle_default = 0;
       var throttle_max = 10;
       var throttle_min = -10;
@@ -22,6 +22,7 @@
         ros : ros,
         name : '/joystick',
         messageType : 'std_msgs/joystick'
+        console.log("cmd",cmdVel);
       });
       // Create the message payload to be published
       // Object matches fields defined in .msg
@@ -135,11 +136,11 @@
         document.getElementById("status_roshost").innerHTML = "Connected to Rover";
         document.getElementById("status_roshost").style = "color:GREEN";
       });
-      ros.on('close', function() { // Report a connection closed
+      /*ros.on('close', function() { // Report a connection closed
         console.log("Rover has closed the connection");
         document.getElementById("status_roshost").innerHTML = "Rover has closed the connection";
         document.getElementById("status_roshost").style = "color:ORANGE";
-      });
+      });*/
 
     </script>
   </head>

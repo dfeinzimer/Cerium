@@ -1,0 +1,7 @@
+{
+  "name": "cerium",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
