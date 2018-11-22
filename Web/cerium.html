@@ -10,22 +10,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script>
       var camera = 'http://192.168.1.242:8081'
-      var ros = new ROSLIB.Ros(); // Make a new ros object
+      var ros_obj = new ROSLIB.Ros(); // Make a new ros object
       var roshost = 'ws://192.168.1.242:9090'
       var throttle_default = 0;
       var throttle_max = 10;
       var throttle_min = -10;
-      ros.connect(roshost); // Connect the ros object to roshost
-
-      // Publishing
-      var cmdVel = new ROSLIB.Topic({ // Create a topic object
-        ros : ros,
+      ros_obj.connect(roshost); // Connect the ros object to roshost
+      var rosbridge_obj = new ROSLIB.Topic({ // Create a topic object
+        ros : ros_obj,
         name : '/joystick',
         messageType : 'mobility_topic.joystick'
       });
-      // Create the message payload to be published
-      // Object matches fields defined in .msg
-      /*var rover_message = new ROSLIB.Message({
+      var message_obj = new ROSLIB.Message({ // Create the message payload to be published
         arm : {
           j1 : 0,
           j2 : 0,
@@ -40,90 +36,18 @@
         },
         mode : 0
       });
-      cmdVel.publish(rover_message); // Publish the message
-*/
-
-
-
-
-      //Subscribing
-      var listener = new ROSLIB.Topic({ // Create a topic object
-        ros : ros,
-        name : '/listener',
-        messageType : 'std_msgs/String'
-      });
-      // Callback for messages published on the topic
-      listener.subscribe(function(message) {
-        console.log('Received message on ' + listener.name + ': ' + message.data);
-      });
-      // Unsubscribe from the topic
-      //listener.unsubscribe();
-
-      // Calling a service
-      var addTwoIntsClient = new ROSLIB.Service({ // Create a service cleint
-        ros : ros,
-        name : '/add_two_ints',
-        serviceType : 'rospy_tutorials/AddTwoInts'
-      });
-      // Create a service request
-      // Object matches fields defined in .srv
-      var request = new ROSLIB.ServiceRequest({
-        a : 5,
-        b : 2
-      });
-      // Call service /add_two_ints and get back the results in callback
-      // Produces a ROSLIB.ServiceResponse object
-      addTwoIntsClient.callService(request, function(result) {
-        console.log('Result for service call on ' + addTwoIntsClient.name + ': ' + result.sum);
-      });
-
-      // Advertising a service
-      var setBoolServer = new ROSLIB.Service({ // Create a service cleint
-        ros : ros,
-        name : '/set_bool',
-        serviceType : 'std_srvs/SetBool'
-      });
-      setBoolServer.advertise(function(request, response) { // Advertise the service
-        console.log('Received service request on ' + setBoolServer.name + ': ' + request.data);
-        response['success'] = true;
-        response['message'] = 'Set successfully';
-        return true;
-      });
-
-      // Setting/getting a param value
-      ros.getParams(function(params) {  // Get available params
-        console.log(params);
-      });
-      // First, we create a Param object with the name of the param.
-      var test_param = new ROSLIB.Param({
-        ros : ros,
-        name : 'max_vel_y'
-      });
-      // Set the value to be sent to the ROS Parameter Server
-      test_param.set(0.8);
-      test_param.get(function(value) {
-        console.log('test_param: ' + value);
-      });
-
-
-
-
-
-      // Report current values
-      function reporter() {
+      function reporter() { // Console log and publish current values
           console.log(document.getElementById("throttle").value);
-          //console.log(rover_message);
+          console.log(message_obj);
+          rosbridge_obj.publish(message_obj); // Publish the message
       }
-
-      // After the file has loaded
-      $(document).ready(function(){ // Do the following
+      $(document).ready(function(){ // After app has loaded
         $('iframe#roverview1').attr('src', camera); // Load the camera stream
         setInterval(reporter, 100); // Call reporter every 100ms
         document.getElementById("throttle").min = throttle_min;
         document.getElementById("throttle").max = throttle_max;
         document.getElementById("throttle").value = throttle_default;
       });
-
       ros.on('error', function(error) { // Emit an 'error' if there is an error on the backend
         console.log(error);
         document.getElementById("status_roshost").innerHTML = "Cannot connect: " + error;
@@ -139,7 +63,6 @@
         document.getElementById("status_roshost").innerHTML = "Rover has closed the connection";
         document.getElementById("status_roshost").style = "color:ORANGE";
       });
-
     </script>
   </head>
   <body>
