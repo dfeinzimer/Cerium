@@ -45,7 +45,13 @@
       function reporter() { // Console log and publish current values
           console.log(document.getElementById("throttle").value);
           console.log(message_obj);
-          rosbridge_obj.publish(message_obj); // Publish the message
+          try {
+              rosbridge_obj.publish(message_obj); // Publish the message
+          }
+          catch(err) {
+              console.log(err);
+          }
+
       }
       $(document).ready(function(){ // After app has loaded
         $('iframe#roverview1').attr('src', camera); // Load the camera stream
