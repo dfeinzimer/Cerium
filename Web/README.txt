@@ -28,7 +28,7 @@ Troubleshooting:
 		2) Build
 			cd ~/catkin_ws
 			catkin_make
-		3) Source 
+		3) Source
 			source ~/ros_catkin_ws/devel/setup.bash
 
 

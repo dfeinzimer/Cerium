@@ -17,15 +17,18 @@
       var throttle_max = 10;
       var throttle_min = -10;
       ros_obj.connect(roshost); // Connect the ros object to roshost
+
       var rosbridge_obj = new ROSLIB.Topic({ // Create a topic object
         ros : ros_obj,
-        name : '/joystick',
-        messageType : 'mobility_topic.joystick'
+        name : '/listener',
+        messageType : 'std_msgs/String'
       });
 
       var message_obj = new ROSLIB.Message({ // Create the message payload to be published
         header : {
-          header : (new Date).getTime()
+          seq : 0,
+          stamp : (new Date).getTime(),
+          frame_id : 'Titan Rover'
         },
         mobility : {
           ForwardY : 0,
@@ -44,14 +47,22 @@
         },
       });
 
+      function postData() {
+        $.ajax({
+          url: "/publish.py",
+        });
+      }
+
       function reporter() { // Console log and publish current values
           console.log(document.getElementById("throttle").value);
           console.log(message_obj);
+          postData();
           //rosbridge_obj.publish(message_obj); // Publish the message
       }
+
       $(document).ready(function(){ // After app has loaded
         $('iframe#roverview1').attr('src', camera); // Load the camera stream
-        setInterval(reporter, 100); // Call reporter every 100ms
+        setInterval(reporter, 500); // Call reporter every 100ms
         document.getElementById("throttle").min = throttle_min;
         document.getElementById("throttle").max = throttle_max;
         document.getElementById("throttle").value = throttle_default;
