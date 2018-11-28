@@ -31,6 +31,8 @@ Troubleshooting:
 		3) Source
 			source ~/ros_catkin_ws/devel/setup.bash
 
+			rostopic echo /mobility_topic
+
 
 Dependencies:
 	Requires http://wiki.ros.org/rosbridge_server
