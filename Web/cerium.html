@@ -3,32 +3,30 @@
   <head>
     <title>Titan Rover Cerium</title>
     <meta charset="utf-8"/>
-    <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
     <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
     <script src="jquery.js"></script>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script>
-      var camera = 'http://192.168.1.242:8081'
-      var ros_obj = new ROSLIB.Ros(); // Make a new ros object
-      var roshost = 'ws://192.168.1.242:9090'
+    <script type="text/javascript">
+      var camera = 'http://192.168.1.242:8081';
+      var ros = new ROSLIB.Ros({ // Make a new ros object
+        url : 'ws://192.168.1.242:9090'
+      });
       var throttle_default = 0;
       var throttle_max = 10;
       var throttle_min = -10;
-      ros_obj.connect(roshost); // Connect the ros object to roshost
-
       var rosbridge_obj = new ROSLIB.Topic({ // Create a topic object
-        ros : ros_obj,
-        name : '/listener',
-        messageType : 'std_msgs/String'
+        ros : ros,
+        name : '/joystick',
+        messageType : 'mobility_topic/joystick'
       });
-
       var message_obj = new ROSLIB.Message({ // Create the message payload to be published
         header : {
           seq : 0,
-          stamp : (new Date).getTime(),
-          frame_id : 'Titan Rover'
+          stamp : 8768,
+          frame_id : 'Titan Rover',
         },
         mobility : {
           ForwardY : 0,
@@ -46,20 +44,10 @@
           mode : 0,
         },
       });
-
-      function postData() {
-        $.ajax({
-          url: "/publish.py",
-        });
-      }
-
       function reporter() { // Console log and publish current values
           console.log(document.getElementById("throttle").value);
-          console.log(message_obj);
-          postData();
-          //rosbridge_obj.publish(message_obj); // Publish the message
+          rosbridge_obj.publish(message_obj); // Publish the message
       }
-
       $(document).ready(function(){ // After app has loaded
         $('iframe#roverview1').attr('src', camera); // Load the camera stream
         setInterval(reporter, 500); // Call reporter every 100ms
@@ -67,17 +55,17 @@
         document.getElementById("throttle").max = throttle_max;
         document.getElementById("throttle").value = throttle_default;
       });
-      ros_obj.on('error', function(error) { // Emit an 'error' if there is an error on the backend
+      ros.on('error', function(error) { // Emit an 'error' if there is an error on the backend
         console.log(error);
         document.getElementById("status_roshost").innerHTML = "Cannot connect: " + error;
         document.getElementById("status_roshost").style = "color:RED";
       });
-      ros_obj.on('connection', function() { // Report a successful connection attempt
+      ros.on('connection', function() { // Report a successful connection attempt
         console.log("Connected to Rover");
         document.getElementById("status_roshost").innerHTML = "Connected to Rover";
         document.getElementById("status_roshost").style = "color:GREEN";
       });
-      ros_obj.on('close', function() { // Report a connection closed
+      ros.on('close', function() { // Report a connection closed
         console.log("Rover has closed the connection");
         document.getElementById("status_roshost").innerHTML = "Rover has closed the connection";
         document.getElementById("status_roshost").style = "color:ORANGE";
@@ -86,6 +74,7 @@
   </head>
   <body>
     <div><h1>Titan Rover Cerium</h1></div>
+    <div><h1>12.04.18.13</h1></div>
     <div><p id="status_roshost">Status Unavailable</p></div>
     <div><iframe id="roverview1" src=""></iframe></div>
     <div><input type="range" id="throttle"></div>
