@@ -1,16 +1,15 @@
 Authors: 	David Feinzimer <dfeinzimer@csu.fullerton.edu>
-Version:	11.29.18.1
 
 
 Setup:
-	1) Ensure correct 'roshost' value
+	1) Ensure correct 'ros->url' value
 	2) Ensure correct 'camera' value
-	3) Run:
-			roscore
-			python3 ~/TitanRover2019/controls/mobility/baseESC.py
-			roslaunch rosbridge_server rosbridge_websocket.launch
-			~/Cerium/Web
-				python -m SimpleHTTPServer
+	3) Tab Layout:
+			1) roscore
+			2) python3 ~/TitanRover2019/controls/mobility/baseESC.py
+			3) roslaunch rosbridge_server rosbridge_websocket.launch
+			4) rostopic echo mobility_topic
+			5) cd ~/Cerium/Web; sudo python -m SimpleHTTPServer
 
 
 Problems & Solutions:
