@@ -28,7 +28,7 @@ Problems & Solutions:
 		3) Source
 			source ~/ros_catkin_ws/devel/setup.bash
 	Uploading:
-		1) Run 'sudo scp -r ~/localpath/Cerium/Web pi@192.168.1.122:~/Cerium'
+		1) Run 'sudo scp -r ~/Documents/school/rover/Cerium/Web pi@192.168.1.122:~/Cerium/'
 
 Dependencies & Related Documentation:
 	rosbridge_server
@@ -45,5 +45,3 @@ Deprecated Setup:
 				rosrun rospy_tutorials add_two_ints_server
 				roslaunch rosbridge_server rosbridge_websocket.launch
 				python -m SimpleHTTPServer
-		2) Update 'roshost' value
-		3) Update 'camera' value
