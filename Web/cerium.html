@@ -12,12 +12,12 @@
     <script type="text/javascript">
       var camera = 'http://192.168.1.242:8081';
       var ros = new ROSLIB.Ros({ // Make a new ros object
-        url : 'ws://192.168.1.242:9090'
+        url : 'ws://192.168.1.122:9090'
       });
       var throttle_default = 0;
       var throttle_max = 10;
       var throttle_min = -10;
-      /*var rosbridge_obj = new ROSLIB.Topic({ // Create a topic object
+      var rosbridge_obj = new ROSLIB.Topic({ // Create a topic object
         ros : ros,
         name : '/mobility_topic',
         messageType : 'mobility_topic/joystick'
@@ -43,32 +43,15 @@
         mode : {
           mode : 0,
         },
-      });*/
-      var rosbridge_obj = new ROSLIB.Topic({ // Create a topic object
-        ros : ros,
-        name : '/cmd_vel',
-        messageType : 'geometry_msgs/Twist'
-      });
-      var message_obj = new ROSLIB.Message({ // Create the message payload to be published
-        linear : {
-          x : 0.1,
-          y : 0.2,
-          z : 0.3
-        },
-        angular : {
-          x : -0.1,
-          y : -0.2,
-          z : -0.3
-        }
       });
       function reporter() { // Console log and publish current values
           console.log("Throttle: ", document.getElementById("throttle").value);
-          rosbridge_obj.publish(message_obj); // Publish the message
-          console.log("Message: ", message_obj);
+          console.log("Regular Message: ", message_obj);
+          rosbridge_obj.publish(JSON.stringify(message_obj)); // Publish the message
       }
       $(document).ready(function(){ // After app has loaded
         $('iframe#roverview1').attr('src', camera); // Load the camera stream
-        setInterval(reporter, 500); // Call reporter every 100ms
+        setInterval(reporter, 1000); // Call reporter every 100ms
         document.getElementById("throttle").min = throttle_min;
         document.getElementById("throttle").max = throttle_max;
         document.getElementById("throttle").value = throttle_default;
@@ -89,11 +72,11 @@
         document.getElementById("status_roshost").innerHTML = "Rover has closed the connection";
         document.getElementById("status_roshost").style = "color:ORANGE";
       });
-    </script>l
+    </script>
   </head>
   <body>
     <div><h1>Titan Rover Cerium</h1></div>
-    <div><h1>12.04.18.40</h1></div>
+    <div><h1>12.28.18.7</div>
     <div><p id="status_roshost">Status Unavailable</p></div>
     <div><iframe id="roverview1" src=""></iframe></div>
     <div><input type="range" id="throttle"></div>
