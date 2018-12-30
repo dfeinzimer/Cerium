@@ -8,7 +8,7 @@ Setup:
 			2) python3 ~/TitanRover2019/ros/mobility_topic/scripts/newbaseESC.py
 			3) roslaunch rosbridge_server rosbridge_websocket.launch
 			      or try rosrun rosbridge_server rosbridge_websocket
-			4) rostopic echo /mobility_topic
+			4) rostopic echo /joy/0
 			5) cd ~/Cerium/Web; sudo python -m SimpleHTTPServer
 
 Problems & Solutions:
