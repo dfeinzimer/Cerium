@@ -5,10 +5,8 @@ Setup:
 	2) Ensure correct 'camera' value
 	3) Tab Layout:
 			1) roscore
-			2) python3 ~/TitanRover2019/ros/mobility_topic/scripts/newbaseESC.py
+			2) rostopic echo /joy/0
 			3) roslaunch rosbridge_server rosbridge_websocket.launch
-			      or try rosrun rosbridge_server rosbridge_websocket
-			4) rostopic echo /joy/0
 			5) cd ~/Cerium/Web; sudo python -m SimpleHTTPServer
 
 Problems & Solutions:
@@ -36,12 +34,3 @@ Dependencies & Related Documentation:
 	roslbjs
 		https://github.com/RobotWebTools/roslibjs
 		http://library.isr.ist.utl.pt/docs/roswiki/rosbridge(2f)Tutorials(2f)Using(20)Javascript(20)to(20)control(20)ROS(20)via(20)rosjs.html
-
-Deprecated Setup:
-		1) Run:
-				roscore
-				rostopic pub /listener std_msgs/String "Hello, World"
-				rostopic echo /cmd_vel
-				rosrun rospy_tutorials add_two_ints_server
-				roslaunch rosbridge_server rosbridge_websocket.launch
-				python -m SimpleHTTPServer

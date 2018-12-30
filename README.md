@@ -1,3 +1,3 @@
 # Cerium
 
- Mobile solutions for rover controls.
+ Native solutions for rover controls.
