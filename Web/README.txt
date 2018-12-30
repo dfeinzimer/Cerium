@@ -15,7 +15,7 @@ Problems & Solutions:
 		1) Add 'modprobe bcm2835-v4l2' to /etc/rc.local
 		2) Or simply run 'sudo modprobe bcm2835-v4l2'
 	Sourcing errors:
-			source ~/ros_catkin_ws/devel/setup.bash
+		source ~/ros_catkin_ws/devel/setup.bash
 
 Dependencies & Related Documentation:
 	rosbridge_server
