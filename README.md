@@ -1,3 +1,3 @@
 # Cerium
 
- Native solutions for rover controls.
+ Native solutions for rover control.

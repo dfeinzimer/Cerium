@@ -1,3 +1,8 @@
+
+# Cerium - Web
+
+Web solution for rover control.
+
 Author(s):
 	David Feinzimer dfeinzimer@csu.fullerton.edu
 
@@ -11,10 +16,10 @@ Setup:
 			5) cd ~/Cerium/Web; sudo python -m SimpleHTTPServer
 
 Problems & Solutions:
-	Motion errors:
+	Motion:
 		1) Add 'modprobe bcm2835-v4l2' to /etc/rc.local
 		2) Or simply run 'sudo modprobe bcm2835-v4l2'
-	Sourcing errors:
+	Sourcing:
 		source ~/ros_catkin_ws/devel/setup.bash
 
 Dependencies & Related Documentation:
