@@ -21,6 +21,10 @@ Problems & Solutions:
 		2) Or simply run 'sudo modprobe bcm2835-v4l2'
 	Sourcing:
 		source ~/ros_catkin_ws/devel/setup.bash
+	MASTER URI Set:
+		export ROS_MASTER_URI=http://...
+	Updating files:
+		sudo scp -r ~/localpath/Cerium/Web pi@IP:~/Cerium/
 
 Dependencies & Related Documentation:
 	rosbridge_server
