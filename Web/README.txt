@@ -13,7 +13,7 @@ Setup:
 			1) roscore
 			2) rostopic echo /joy/0
 			3) roslaunch rosbridge_server rosbridge_websocket.launch
-			5) cd ~/Cerium/Web; sudo python -m SimpleHTTPServer
+			5) sudo python -m SimpleHTTPServer
 
 Problems & Solutions:
 	Motion:
