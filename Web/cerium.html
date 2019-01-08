@@ -14,9 +14,9 @@
       var ros = new ROSLIB.Ros({ // Make a new ros object
         url : 'ws://192.168.1.242:9090'
       });
-      var throttle_default = 0;
-      var throttle_max = 10;
-      var throttle_min = -10;
+      var throttle_default = 30;
+      var throttle_max = 100;
+      var throttle_min = 0;
       var rosbridge_obj = new ROSLIB.Topic({ // Create a topic object
         ros : ros,
         name : '/joy/0',
@@ -28,14 +28,27 @@
           stamp : 0,
           frame_id : 'Titan Rover',
         },
-	axes : [
-	1.5, 1.5, 1.5
-	],
-	buttons : [
-	0, 0, 0
-	]
+      	axes : [
+      	   1.5, 1.5, 1.5
+      	],
+      	buttons : [
+      	0, 0, 0
+      	]
       });
       function reporter() { // Console log and publish current values
+          var message_obj = new ROSLIB.Message({ // Create the message payload to be published
+            header : {
+              seq : 0,
+              stamp : 0,
+              frame_id : 'Titan Rover',
+            },
+            axes : [
+               document.getElementById("throttle").value, 1.5, 1.5
+            ],
+            buttons : [
+            0, 0, 0
+            ]
+          });
           console.log("Throttle: ", document.getElementById("throttle").value);
           console.log("Regular Message: ", message_obj);
           rosbridge_obj.publish(message_obj); // Publish the message
@@ -67,7 +80,7 @@
   </head>
   <body>
     <div><h1>Titan Rover Cerium</h1></div>
-    <div><h1>1.6.19.4</div>
+    <div><h1>1.7.19.2</div>
     <div><p id="status_roshost">Status Unavailable</p></div>
     <div><iframe id="roverview1" src=""></iframe></div>
     <div><input type="range" id="throttle"></div>
