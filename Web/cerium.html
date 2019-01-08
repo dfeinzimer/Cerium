@@ -14,9 +14,9 @@
       var ros = new ROSLIB.Ros({ // Make a new ros object
         url : 'ws://192.168.1.242:9090'
       });
-      var throttle_default = 30;
+      var throttle_default = 0;
       var throttle_max = 100;
-      var throttle_min = 0;
+      var throttle_min = -100;
       var rosbridge_obj = new ROSLIB.Topic({ // Create a topic object
         ros : ros,
         name : '/joy/0',
@@ -55,7 +55,7 @@
       }
       $(document).ready(function(){ // After app has loaded
         $('iframe#roverview1').attr('src', camera); // Load the camera stream
-        setInterval(reporter, 100); // Call reporter every 100ms
+        setInterval(reporter, 75); // Call reporter every 100ms
         document.getElementById("throttle").min = throttle_min;
         document.getElementById("throttle").max = throttle_max;
         document.getElementById("throttle").value = throttle_default;
@@ -80,7 +80,7 @@
   </head>
   <body>
     <div><h1>Titan Rover Cerium</h1></div>
-    <div><h1>1.7.19.5</div>
+    <div><h1>1.7.19.6</div>
     <div><p id="status_roshost">Status Unavailable</p></div>
     <div><iframe id="roverview1" src=""></iframe></div>
     <div><input type="range" id="throttle"></div>
