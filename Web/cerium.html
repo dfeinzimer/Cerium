@@ -43,7 +43,7 @@
               frame_id : 'Titan Rover',
             },
             axes : [
-               document.getElementById("throttle").value, 0, 0
+               int(document.getElementById("throttle").value), 0, 0
             ],
             buttons : [
             0, 0, 0
@@ -80,7 +80,7 @@
   </head>
   <body>
     <div><h1>Titan Rover Cerium</h1></div>
-    <div><h1>1.7.19.3</div>
+    <div><h1>1.7.19.4</div>
     <div><p id="status_roshost">Status Unavailable</p></div>
     <div><iframe id="roverview1" src=""></iframe></div>
     <div><input type="range" id="throttle"></div>
