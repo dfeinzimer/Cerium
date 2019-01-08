@@ -17,6 +17,9 @@
       var throttle_default = 0;
       var throttle_max = 100;
       var throttle_min = -100;
+      var turn_default = 0;
+      var turn_max = 127;
+      var turn_min = -127;
       var rosbridge_obj = new ROSLIB.Topic({ // Create a topic object
         ros : ros,
         name : '/joy/0',
@@ -29,7 +32,7 @@
           frame_id : 'Titan Rover',
         },
       	axes : [
-      	   1.5, 1.5, 1.5
+      	   0, 0, 0
       	],
       	buttons : [
       	0, 0, 0
@@ -43,7 +46,9 @@
               frame_id : 'Titan Rover',
             },
             axes : [
-               parseFloat(document.getElementById("throttle").value), 0, 0
+               parseFloat(document.getElementById("throttle").value),
+               parseFloat(document.getElementById("turn").value),
+               0
             ],
             buttons : [
             0, 0, 0
@@ -59,6 +64,9 @@
         document.getElementById("throttle").min = throttle_min;
         document.getElementById("throttle").max = throttle_max;
         document.getElementById("throttle").value = throttle_default;
+        document.getElementById("turn").min = turn_min;
+        document.getElementById("turn").max = turn_max;
+        document.getElementById("turn").value = turn_default;
       });
       ros.on('error', function(error) { // Emit an 'error' if there is an error on the backend
         console.log(error);
@@ -80,10 +88,12 @@
   </head>
   <body>
     <div><h1>Titan Rover Cerium</h1></div>
-    <div><h1>1.7.19.6</div>
+    <div><h1>1.7.19.7</div>
     <div><p id="status_roshost">Status Unavailable</p></div>
     <div><iframe id="roverview1" src=""></iframe></div>
     <div><input type="range" id="throttle"></div>
     <div><label>Throttle</label></div>
+    <div><input type="range" id="turn"></div>
+    <div><label>Turn</label></div>
   </body>
 </html>
